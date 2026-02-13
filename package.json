@@ -1,5 +1,5 @@
 {
-  "name": "@omniaura/solid-hotkeys",
+  "name": "solid-hotkeys",
   "version": "0.1.0",
   "description": "SolidJS adapter for TanStack Hotkeys - keyboard shortcuts made easy",
   "type": "module",
@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "bun test",
+    "test": "bun test --conditions=browser",
     "prepublishOnly": "bun run build"
   },
   "keywords": [
@@ -51,7 +51,9 @@
     "@tanstack/hotkeys": "^0.1.0"
   },
   "devDependencies": {
+    "@happy-dom/global-registrator": "^16.0.0",
     "@types/bun": "latest",
+    "semantic-release": "25",
     "solid-js": "^1.9.0",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0"
