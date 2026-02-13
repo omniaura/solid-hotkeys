@@ -1,5 +1,5 @@
 {
-  "name": "solid-hotkeys",
+  "name": "@omniaura/solid-hotkeys",
   "version": "0.1.0",
   "description": "SolidJS adapter for TanStack Hotkeys - keyboard shortcuts made easy",
   "type": "module",

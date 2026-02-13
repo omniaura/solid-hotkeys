@@ -1,8 +1,8 @@
-# solid-hotkeys
+# @omniaura/solid-hotkeys
 
 > SolidJS adapter for [TanStack Hotkeys](https://tanstack.com/hotkeys) - keyboard shortcuts made easy
 
-[![npm version](https://img.shields.io/npm/v/solid-hotkeys.svg)](https://www.npmjs.com/package/solid-hotkeys)
+[![npm version](https://img.shields.io/npm/v/@omniaura/solid-hotkeys.svg)](https://www.npmjs.com/package/@omniaura/solid-hotkeys)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -17,17 +17,17 @@
 ## Installation
 
 ```bash
-npm install solid-hotkeys @tanstack/hotkeys
+npm install @omniaura/solid-hotkeys @tanstack/hotkeys
 # or
-bun add solid-hotkeys @tanstack/hotkeys
+bun add @omniaura/solid-hotkeys @tanstack/hotkeys
 # or
-pnpm add solid-hotkeys @tanstack/hotkeys
+pnpm add @omniaura/solid-hotkeys @tanstack/hotkeys
 ```
 
 ## Quick Start
 
 ```tsx
-import { createHotkey } from "solid-hotkeys";
+import { createHotkey } from "@omniaura/solid-hotkeys";
 
 function App() {
   createHotkey("Mod+S", (event) => {
@@ -44,7 +44,7 @@ function App() {
 ### Basic Hotkey
 
 ```tsx
-import { createHotkey } from "solid-hotkeys";
+import { createHotkey } from "@omniaura/solid-hotkeys";
 
 function SaveButton() {
   createHotkey("Mod+S", (event, { hotkey }) => {
@@ -59,7 +59,7 @@ function SaveButton() {
 ### Conditional Hotkeys
 
 ```tsx
-import { createHotkey } from "solid-hotkeys";
+import { createHotkey } from "@omniaura/solid-hotkeys";
 import { Show, createSignal } from "solid-js";
 
 function Modal(props) {
@@ -79,7 +79,7 @@ function Modal(props) {
 ### Scoped Hotkeys
 
 ```tsx
-import { createHotkey } from "solid-hotkeys";
+import { createHotkey } from "@omniaura/solid-hotkeys";
 
 function Editor() {
   let editorRef: HTMLDivElement | undefined;
@@ -96,7 +96,7 @@ function Editor() {
 ### Hotkey Sequences (Vim-style)
 
 ```tsx
-import { createHotkeySequence } from "solid-hotkeys";
+import { createHotkeySequence } from "@omniaura/solid-hotkeys";
 
 function VimEditor() {
   // 'g g' to go to top
@@ -121,7 +121,7 @@ function VimEditor() {
 ### Track Held Keys
 
 ```tsx
-import { createHeldKeys, createKeyHold } from "solid-hotkeys";
+import { createHeldKeys, createKeyHold } from "@omniaura/solid-hotkeys";
 import { For } from "solid-js";
 
 function KeyTracker() {
@@ -143,7 +143,7 @@ function KeyTracker() {
 ### Hotkey Recorder
 
 ```tsx
-import { createHotkeyRecorder } from "solid-hotkeys";
+import { createHotkeyRecorder } from "@omniaura/solid-hotkeys";
 import { createSignal, Show } from "solid-js";
 
 function ShortcutSettings() {
@@ -175,7 +175,7 @@ function ShortcutSettings() {
 ### Global Configuration
 
 ```tsx
-import { HotkeysProvider } from "solid-hotkeys";
+import { HotkeysProvider } from "@omniaura/solid-hotkeys";
 
 function App() {
   return (
