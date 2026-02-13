@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Create GitHub releases + push version commits
+      issues: write # Comment on issues referenced in commits
+      pull-requests: write # Comment on PRs referenced in commits
+      id-token: write # npm provenance
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for semantic-release to analyze commits
+
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install --frozen-lockfile
+
+      - run: bun run build
+
+      - run: bun run test
+
+      # Node is needed for npm publish (semantic-release uses npm under the hood)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Auth is handled via OIDC trusted publishing — no NPM_TOKEN needed
+      - run: bunx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
